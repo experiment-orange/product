@@ -1,0 +1,9 @@
+#!/bin/bash
+
+pacman -S --noconfirm --needed arm-none-eabi-gcc arm-none-eabi-newlib
+
+# This is disliked by "true" ArchLinux gurus
+ln -sf $(which arm-none-eabi-gcc) /usr/bin/cc
+ln -sf $(which arm-none-eabi-as) /usr/bin/as
+ln -sf $(which arm-none-eabi-g++) /usr/bin/cxx
+ln -sf $(which arm-none-eabi-g++) /usr/bin/cxx
