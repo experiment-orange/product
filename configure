@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -ex
+
+## sanitizer script always clears configuration layer, so we are always starting fresh
+
+cat >>/etc/pacman.conf <<EOF
+[tools]
+SigLevel = Never
+Server = http://52.19.90.102:8000/tools/os/x86_64
+EOF
+pacman -Sy pacman-orange --noconfirm --force
+
+rm /var/lib/pacman/sync/*.db
+pacman -Syu
