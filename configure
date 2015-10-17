@@ -7,7 +7,7 @@ set -ex
 cat >>/etc/pacman.conf <<EOF
 [tools]
 SigLevel = Never
-Server = http://52.19.90.102:8000/tools/os/x86_64
+Server = http://52.30.213.60:8000/tools/os/x86_64
 EOF
 pacman -Sy pacman-orange --noconfirm --force
 
