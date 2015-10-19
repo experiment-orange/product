@@ -10,3 +10,4 @@ ln -sf $(which arm-none-eabi-as) /usr/bin/as
 ln -sf $(which arm-none-eabi-g++) /usr/bin/cxx
 ln -sf $(which arm-none-eabi-g++) /usr/bin/cxx
 ln -sf $(which arm-none-eabi-strip) /usr/bin/strip
+ln -sf $(which arm-none-eabi-ar) /usr/bin/ar
