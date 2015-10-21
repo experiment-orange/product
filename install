@@ -11,3 +11,5 @@ ln -sf $(which arm-none-eabi-g++) /usr/bin/cxx
 ln -sf $(which arm-none-eabi-g++) /usr/bin/cxx
 ln -sf $(which arm-none-eabi-strip) /usr/bin/strip
 ln -sf $(which arm-none-eabi-ar) /usr/bin/ar
+ln -sf $(which arm-none-eabi-size) /usr/bin/size
+ln -sf $(which arm-none-eabi-objcopy) /usr/bin/objcopy
