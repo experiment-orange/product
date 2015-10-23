@@ -2,14 +2,14 @@
 
 set -ex
 
-## sanitizer script always clears configuration layer, so we are always starting fresh
+# Irreversibly update build and package settings
+install -dm755 /etc
+install -m644 -t /etc $(dirname $0)/etc/{pacman.conf,makepkg.conf}
 
-cat >>/etc/pacman.conf <<EOF
-[tools]
-SigLevel = Never
-Server = http://52.30.213.60:8000/tools/os/x86_64
-EOF
-pacman -Sy pacman-orange --noconfirm --force
+# Create folders for cache
+install -dm1777 /var/lib/makepkg/source /var/cache/makepkg /var/lib/makepkg/pkg
 
-rm /var/lib/pacman/sync/*.db
-pacman -Syu
+# Prepare local builds repository
+tar czvf /var/lib/makepkg/pkg/local-builds.db --files-from /dev/null
+
+
