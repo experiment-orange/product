@@ -12,4 +12,6 @@ install -dm1777 /var/lib/makepkg/source /var/cache/makepkg /var/lib/makepkg/pkg
 # Prepare local builds repository
 tar czvf /var/lib/makepkg/pkg/local-builds.db --files-from /dev/null
 
+rm /var/lib/pacman/sync/*.db
+pacman -Syu
 
